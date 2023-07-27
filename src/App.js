@@ -7,10 +7,12 @@ import Header from "./components/header/header";
 
 import Map from "./components/map/map";
 import List from "./components/list/list";
+import RangeSlider from "./components/RangeSlider/rangeSlider";
 // import { Data } from '@react-google-maps/api';
 
 
 const App = () => {
+  
     const [places, setPlaces]=useState([]);
     const [coordinates, setCoordinates]=useState({});
     const [bounds, setBound]=useState({});
@@ -66,6 +68,11 @@ const App = () => {
       <Header setCoordinates={setCoordinates}/>
       <Grid container spacing={3} style={{ width: '100%' }}>
         <Grid item xs={12} md={4}>
+        <RangeSlider
+            // Pass the 'rating' state and 'setRating' function as props to the RangeSlider component
+            rating={rating}
+            setRating={setRating}
+          />
           <List places={filteredPlaces.length ? filteredPlaces : places} 
                 childClicked={childClicked} 
                 isLoading={isLoading}

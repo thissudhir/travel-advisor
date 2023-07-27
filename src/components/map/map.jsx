@@ -25,7 +25,7 @@ const Map = ({setCoordinates, setBound, coordinates, places, setChildClicked}) =
                             setBound({ne: event.marginBounds.ne, sw: event.marginBounds.sw});
                         }}
                     >
-                        {places.map((place,i)=>(
+                        {places?.map((place,i)=>(
                             <div className={classes.markerContainer}
                             
                             lat={Number(place.latitude)}

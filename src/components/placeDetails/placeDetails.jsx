@@ -43,14 +43,14 @@ const PlaceDetails = ({ place, selected, refProp}) => {
                {place.ranking}
              </Typography>
            </Box>
-           {place.awards && place.awards.map((award) => (
+           {place?.awards?.map((award) => (
                  <Box display="flex" justifyContent="space-between" my={1} alignItems="center" key={award.display_name}>
                      <img src={award.images.small} alt={award.display_name} />
                      <Typography variant="subtitle2" color="textSecondary">{award.display_name}</Typography>
                  </Box>
              ))}
 
-             {place.cuisine && place.cuisine.map(({ name }) => (
+             {place?.cuisine?.map(({ name }) => (
                  <Chip key={name} size="small" label={name} className={classes.chip} />
              ))}
 

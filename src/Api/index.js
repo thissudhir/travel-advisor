@@ -28,4 +28,3 @@ catch (error) {
   throw error; // Rethrow the error so it can be caught in the App.js component
 }
 }
-
