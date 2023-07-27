@@ -7,7 +7,7 @@ import Header from "./components/header/header";
 
 import Map from "./components/map/map";
 import List from "./components/list/list";
-import { Data } from '@react-google-maps/api';
+// import { Data } from '@react-google-maps/api';
 
 
 const App = () => {

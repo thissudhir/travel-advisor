@@ -8,6 +8,8 @@ export default makeStyles((theme) => ({
     },
   },
   search: {
+    cursor: 'pointer',
+    // diplay: 'flex',
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: alpha(theme.palette.common.white, 0.15),
@@ -18,7 +20,7 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: { marginLeft: theme.spacing(3), width: 'auto' },
   },
   searchIcon: {
-    padding: theme.spacing(0, 2), height: '100%', position: 'absolute', pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center',
+    padding: theme.spacing(0, 2), height: '100%', position: 'absolute', pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center',marginLeft:'140px'
   },
   inputRoot: {
     color: 'inherit',

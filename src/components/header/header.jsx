@@ -8,7 +8,7 @@ const Header=(setCoordinates)=>{
     const [autocomplete, setAutocomplete]=useState(null);
 
 
-    const onLoad= (auto)=>setAutocomplete(auto);
+    const onLoad= (autoC)=>setAutocomplete(autoC);
     const onPlaceChanged= ()=>{
         const lat =autocomplete.getPlace().geometry.location.lat();
         const lng =autocomplete.getPlace().geometry.location.lng();
@@ -20,7 +20,7 @@ const Header=(setCoordinates)=>{
         <AppBar position="static">
             <Toolbar className={classes.toolbar}>
                 <Typography variant="h5" className={classes.title}>
-                    Travle advisor
+                    Travel advisor
                 </Typography>
                 <Box display="flex">
                     <Typography variant="h6" className={classes.title}>
