@@ -1,37 +1,44 @@
-import React, { useState } from "react";
-import { Slider, Typography } from "@material-ui/core";
+import React from "react";
+import { Slider, Typography, makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "80%",
+    margin: "0 auto",
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+    textAlign: "center",
+  },
+  slider: {
+    color: theme.palette.primary.main,
+  },
+}));
 
 const RangeSlider = ({ rating, setRating }) => {
-    const handleChange = (event, newValue) => {
-      setRating(newValue);
+  const classes = useStyles();
 
-  
+  const handleChange = (event, newValue) => {
+    setRating(newValue);
   };
 
   return (
-    <div>
-      <Typography gutterBottom>Adjust Range (KM)</Typography>
+    <div className={classes.root}>
+      <Typography variant="h6" gutterBottom>
+        Adjust Range (KM)
+      </Typography>
       <Slider
-       value={rating}
-       onChange={handleChange}
-       valueLabelDisplay="auto"
-       min={1}
-       max={5}
-       step={0.1}
-       aria-labelledby="range-slider"
+        value={rating}
+        onChange={handleChange}
+        valueLabelDisplay="auto"
+        min={1}
+        max={5}
+        step={0.1}
+        classes={{ thumb: classes.slider, rail: classes.slider, track: classes.slider }}
+        aria-labelledby="range-slider"
       />
       <Typography variant="body2">{rating} KM</Typography>
     </div>
   );
 };
-
-
-
-
-
-
-
-  
-
 
 export default RangeSlider;
