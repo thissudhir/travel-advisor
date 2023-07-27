@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import { Paper, Typography, useMediaQuery } from "@material-ui/core";
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined'; 
 import { Rating } from '@material-ui/lab';
-
+import mapStyles from './mapStyle'
 import useStyles from './style';
 
 const Map = ({setCoordinates, setBound, coordinates, places, setChildClicked}) => {
@@ -12,12 +12,12 @@ const Map = ({setCoordinates, setBound, coordinates, places, setChildClicked}) =
     
     return (
        <div className={classes.mapContainer}>
-        <GoogleMapReact bootstrapURLKeys={{ key:'AIzaSyAxNdW8ya5hW6hmLh08BE8fqh0IUa6Z14s'}}
+        <GoogleMapReact bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY}}
                         defaultCenter={coordinates}
                         center={coordinates}
                         defaultZoom={14}
                         margin={[50, 50, 50, 50]}
-                        options={''}
+                        options={{ disableDefaultUI:true, zoomControl: true, styles: mapStyles}}
                         onChildClick={(child)=>setChildClicked(child)}
                         onChange={(event)=>{
                             console.log(event)
