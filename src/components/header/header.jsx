@@ -3,7 +3,7 @@ import { Autocomplete } from '@react-google-maps/api';
 import { AppBar, Typography, InputBase, Toolbar, Box } from "@material-ui/core";
 import SearchIcon from '@material-ui/icons/Search';
 import useStyles from './style';
-const Header=(setCoordinates)=>{
+const Header=({setCoordinates})=>{
     const classes= useStyles();
     const [autocomplete, setAutocomplete]=useState(null);
 

@@ -21,6 +21,7 @@ const App = () => {
     const [type, setType]=useState('restaurants');
     const [rating, setRating]=useState('');
     const [filteredPlaces, setFilteredPlaces]=useState([]);
+    const [distance, setDistance] = useState(5);
 
     // getting users geolocation on the start of the application 
     useEffect(() => {
@@ -69,9 +70,8 @@ const App = () => {
       <Grid container spacing={3} style={{ width: '100%' }}>
         <Grid item xs={12} md={4}>
         <RangeSlider
-            // Pass the 'rating' state and 'setRating' function as props to the RangeSlider component
-            rating={rating}
-            setRating={setRating}
+            distance={distance}
+            setDistance={setDistance}
           />
           <List places={filteredPlaces.length ? filteredPlaces : places} 
                 childClicked={childClicked} 
@@ -89,6 +89,7 @@ const App = () => {
                 coordinates={coordinates}
                 places={filteredPlaces.length ? filteredPlaces : places}
                 setChildClicked={setChildClicked}
+                distance={distance}
 
             />
                 

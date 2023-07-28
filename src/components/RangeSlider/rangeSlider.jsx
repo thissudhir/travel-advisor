@@ -14,12 +14,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const RangeSlider = ({ rating, setRating }) => {
+const RangeSlider = ({ distance, setDistance }) => {
   const classes = useStyles();
-
   const handleChange = (event, newValue) => {
-    setRating(newValue);
+    setDistance(newValue);
   };
+
 
   return (
     <div className={classes.root}>
@@ -27,7 +27,7 @@ const RangeSlider = ({ rating, setRating }) => {
         Adjust Range (KM)
       </Typography>
       <Slider
-        value={rating}
+        value={distance}
         onChange={handleChange}
         valueLabelDisplay="auto"
         min={1}
@@ -36,7 +36,7 @@ const RangeSlider = ({ rating, setRating }) => {
         classes={{ thumb: classes.slider, rail: classes.slider, track: classes.slider }}
         aria-labelledby="range-slider"
       />
-      <Typography variant="body2">{rating} KM</Typography>
+      <Typography variant="body2">{distance} KM</Typography>
     </div>
   );
 };
